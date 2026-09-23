@@ -7,12 +7,17 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 
 public class CardHolder : MonoBehaviour
 {
 
     // Attribute Manager
     private AttributeManager _am;
+
+    [SerializeField] private TextMeshProUGUI _dialogueText;
+
+    [SerializeField] private TextMeshProUGUI _descText;
 
     // Random Card Pool
     private RandomCardsPool _rcp;
@@ -27,8 +32,6 @@ public class CardHolder : MonoBehaviour
 
     // Held Card
     private Card _heldCard;
-
-    private bool _cardLeaning;
 
     private string activeSelection;
 
@@ -48,8 +51,9 @@ public class CardHolder : MonoBehaviour
             _heldCard = FindFirstObjectByType<Card>();
             _heldCard.transform.SetParent(transform);
             _heldCard.transform.localPosition = _centralPos;    
+            _dialogueText.text = _heldCard.cardDialogue;
+            _descText.text = _heldCard.cardDesc;
         }
-
     }
 
     public void OnKey(InputAction.CallbackContext context)
@@ -158,8 +162,19 @@ public class CardHolder : MonoBehaviour
         // Shoot the Card in the direction its leaning
         yield return StartCoroutine(MoveCard(_heldCard, destination * 40, 16f));
 
-        // After a few seconds, get the Card's Attribute changes and apply them to the Attributes
+        // Update Attributes
         _am.AlterAttributes(_heldCard, dir);
+
+        // Update Text
+        _dialogueText.text = _heldCard.cardDialogue;
+        _descText.text = _heldCard.cardDesc;
+
+        // Add New Cards if any exist
+        if (_heldCard.dirSelecs[dir].newCards != null)
+        {
+            _rcp.AddCardSet(_heldCard.dirSelecs[dir].newCards);
+            Debug.Log("New Cards Added");
+        }
         
         // Get and save the Card's follow up, if there is one. Otherwise, pull a Card from the Random Pool
         Card _nextCard;
@@ -174,7 +189,7 @@ public class CardHolder : MonoBehaviour
         }
         
         // While the Held Card is off screen
-        Debug.Log("Change Card");
+        Debug.Log("Change Card: " + _heldCard.CardName() + " to " + _nextCard.CardName());
         
         Destroy(_heldCard.gameObject);
 
@@ -195,7 +210,6 @@ public class CardHolder : MonoBehaviour
 
     IEnumerator MoveCard(Card cardToMove, Vector3 destination, float speed)
     {
-
         while (Vector3.Distance(cardToMove.transform.localPosition, destination) > 0.01)
         {
             cardToMove.transform.localPosition = Vector3.MoveTowards(cardToMove.transform.localPosition, destination, speed * Time.deltaTime);

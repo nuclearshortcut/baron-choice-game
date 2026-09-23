@@ -32,9 +32,14 @@ public class RandomCardsPool : MonoBehaviour
         return nextCard;
     }
 
-    public void AddCards(Card newCard)
+    public void AddCard(Card newCard)
     {
         _randomCards.Add(newCard);
+    }
+
+    public void AddCardSet(List<Card> newCards)
+    {
+        _randomCards.AddRange(newCards);
     }
 
 }

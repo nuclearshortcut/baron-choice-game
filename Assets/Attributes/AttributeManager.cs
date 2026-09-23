@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using System.Data;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -15,6 +16,8 @@ public class AttributeManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _armyText;
     [SerializeField] private TextMeshProUGUI _churText;
     [SerializeField] private TextMeshProUGUI _goldText;
+    [SerializeField] private TextMeshProUGUI _weekText;
+    [SerializeField] private TextMeshProUGUI _yearText;
 
     // Attribute Nums
     [SerializeField] private int _loveStat;
@@ -24,6 +27,8 @@ public class AttributeManager : MonoBehaviour
     [SerializeField] private int _armyStat;
     [SerializeField] private int _churStat;
     [SerializeField] private int _goldStat;
+    [SerializeField] private int _weekStat;
+    [SerializeField] private int _yearStat;
 
 
     void Awake()
@@ -67,5 +72,13 @@ public class AttributeManager : MonoBehaviour
         _goldStat += card.dirSelecs[dir].goldEffect;
         if (_goldStat > 20) {_goldStat = 20;} else if (_goldStat < 0) {_goldStat = 0;};
         _goldText.text = (int.Parse(_goldText.text) + card.dirSelecs[dir].goldEffect).ToString();
+
+        _weekStat += card.dirSelecs[dir].WeekProgress;
+        _weekText.text = $"Week: {_weekStat}";
+
+        _yearStat += card.dirSelecs[dir].YearProgress;
+        _yearText.text = $"Year: {_yearStat}";
+        
+
     }
 }

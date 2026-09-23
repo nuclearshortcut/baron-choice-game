@@ -444,7 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9547169, g: 0.1711284, b: 0.9082251, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.33193856, g: 0.83396226, b: 0.11171948, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7433963, g: 0.537209, b: 0.71892256, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1130,7 +1130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6301887, g: 0.10344604, b: 0.10344604, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1687,6 +1687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61c414f7c885e74e9436fe1b3a77c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CardHolder
+  _dialogueText: {fileID: 315791807}
+  _descText: {fileID: 1222822742}
   _centralPos: {x: 0, y: 0, z: 0}
   _upPos: {x: 0, y: 0.5, z: 0}
   _rightPos: {x: 0.5, y: 0, z: 0}
@@ -2370,7 +2372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8490566, g: 0.59969646, b: 0.1521893, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2407,7 +2409,7 @@ GameObject:
   - component: {fileID: 1222822743}
   - component: {fileID: 1222822742}
   m_Layer: 5
-  m_Name: CardNameText
+  m_Name: DescText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2452,7 +2454,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CardName
+  m_text: 'Description
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2587,6 +2591,8 @@ MonoBehaviour:
   _armyText: {fileID: 1971379751}
   _churText: {fileID: 119366090}
   _goldText: {fileID: 1074069105}
+  _weekText: {fileID: 1949210808}
+  _yearText: {fileID: 1180797650}
   _loveStat: 0
   _approStat: 0
   _presStat: 0
@@ -2594,6 +2600,8 @@ MonoBehaviour:
   _armyStat: 0
   _churStat: 0
   _goldStat: 0
+  _weekStat: 0
+  _yearStat: 0
 --- !u!1 &1480879798
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,9 +2872,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Text
-
-'
+  m_text: Pieces
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2997,7 +3003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.31401205, g: 0.72388816, b: 0.90943396, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3198,7 +3204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9169811, g: 0.89189947, b: 0.14360262, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3714,6 +3720,18 @@ PrefabInstance:
     - target: {fileID: 6136120933963196288, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
       propertyPath: m_Name
       value: TestCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884371975178702241, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
+      propertyPath: cardDesc
+      value: Sir Test the Card
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884371975178702241, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
+      propertyPath: cardName
+      value: TestCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884371975178702241, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
+      propertyPath: cardDialogue
+      value: '"Hey, I''m a Card!"'
       objectReference: {fileID: 0}
     - target: {fileID: 9197751408016457443, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
       propertyPath: m_LocalPosition.x

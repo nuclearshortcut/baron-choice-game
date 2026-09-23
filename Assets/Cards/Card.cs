@@ -2,11 +2,25 @@ using System;
 using System.Collections.Generic;
 using NUnit.Framework.Constraints;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Card : MonoBehaviour
 {
+
+    // Internal name of the Card
+    [SerializeField] private string cardName;
+    public string CardName()
+    {
+        return cardName;
+    }
+
+    // Description
+    public string cardDesc;
+
+    // Dialogue/Text
+    public string cardDialogue;
 
     // A class for possible Directional Selections made via Card swiping
     [System.Serializable] public class DirSelection
@@ -24,6 +38,8 @@ public class Card : MonoBehaviour
         public int YearProgress;
 
         public Card FollowUpCard; // The card that comes immediately after the current one
+
+        public List<Card> newCards; // New Cards to add
     }
 
     // Four maximum Directional Selections
@@ -38,6 +54,7 @@ public class Card : MonoBehaviour
     {
         // *Always lock dirSelecs at 4 max
     }
+
 
 
 
