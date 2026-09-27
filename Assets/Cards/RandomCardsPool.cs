@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.IO;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class RandomCardsPool : MonoBehaviour
@@ -6,7 +8,7 @@ public class RandomCardsPool : MonoBehaviour
 
      private static RandomCardsPool instance;
 
-    [SerializeField] private List<Card>_randomCards = new List<Card>();
+    [SerializeField] private List<Card>_cardPool = new List<Card>();
 
     void Awake()
     {
@@ -22,24 +24,50 @@ public class RandomCardsPool : MonoBehaviour
 
     public Card GetRandomCard()
     {
-        if (_randomCards.Count < 1) {return null;}
+        if (_cardPool.Count < 1) {return null;}
 
-        int randomIndex = Random.Range(0, _randomCards.Count - 1);
-        Card nextCard = _randomCards[randomIndex];
-
-        if (nextCard.OneTime) {_randomCards.Remove(_randomCards[randomIndex]);}
+        int randomIndex = Random.Range(0, _cardPool.Count - 1);
+        Card nextCard = _cardPool[randomIndex];
 
         return nextCard;
     }
 
     public void AddCard(Card newCard)
     {
-        _randomCards.Add(newCard);
+        _cardPool.Add(newCard);
     }
 
-    public void AddCardSet(List<Card> newCards)
+    public void AddCardPack(string newCardPack)
     {
-        _randomCards.AddRange(newCards);
+        // TODO: Read json files 
+        string folderPath = Path.Combine(Application.persistentDataPath, "CardPacks");
+        string filePath = Path.Combine(folderPath, newCardPack + ".json");
+        string cardPackData;
+
+        if (File.Exists(filePath))
+        {
+            cardPackData = File.ReadAllText(filePath);
+        }
+
+        while (true)
+        {
+            // Read and Get Card Name
+
+            // Read and Get Card Desc
+
+            // Read and Get Card Dialogue
+
+            // Read and Get DirSelecs
+              // Attribute Effects
+              // Follow Up Card String
+              // New Cards File Name
+              // Delete?
+
+            // Doom Card?
+        }
+
+
+        // _cardPool.AddRange(newCards);
     }
 
 }

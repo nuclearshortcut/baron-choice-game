@@ -170,26 +170,29 @@ public class CardHolder : MonoBehaviour
         _descText.text = _heldCard.cardDesc;
 
         // Add New Cards if any exist
-        if (_heldCard.dirSelecs[dir].newCards != null)
+        if (_heldCard.dirSelecs[dir].newCardsPack != "")
         {
-            _rcp.AddCardSet(_heldCard.dirSelecs[dir].newCards);
+            _rcp.AddCardPack(_heldCard.dirSelecs[dir].newCardsPack);
             Debug.Log("New Cards Added");
         }
         
+        // TODO: If card's dir was set to delet,e remove the card from the pool
+
         // Get and save the Card's follow up, if there is one. Otherwise, pull a Card from the Random Pool
         Card _nextCard;
-        if (_heldCard.dirSelecs[dir].FollowUpCard != null)
+        if (_heldCard.dirSelecs[dir].followUpCard == "")
         {
-            _nextCard = _heldCard.dirSelecs[dir].FollowUpCard;
+            // TODO: Find and get follow up card from pool
+            //_nextCard = _heldCard.dirSelecs[dir].FollowUpCard;
+            _nextCard = _rcp.GetRandomCard();
         }
         else
         {
-            // Rand Card Pool   
             _nextCard = _rcp.GetRandomCard();
         }
         
         // While the Held Card is off screen
-        Debug.Log("Change Card: " + _heldCard.CardName() + " to " + _nextCard.CardName());
+        Debug.Log("Change Card: " + _heldCard.CardName + " to " + _nextCard.CardName);
         
         Destroy(_heldCard.gameObject);
 

@@ -6,15 +6,15 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class Card : MonoBehaviour
 {
 
+    // TODO: Add Card img var
+
     // Internal name of the Card
     [SerializeField] private string cardName;
-    public string CardName()
-    {
-        return cardName;
-    }
+    public string CardName => cardName;
 
     // Description
     public string cardDesc;
@@ -37,9 +37,11 @@ public class Card : MonoBehaviour
         public int WeekProgress;
         public int YearProgress;
 
-        public Card FollowUpCard; // The card that comes immediately after the current one
+        public string followUpCard; // The card that comes immediately after the current one
 
-        public List<Card> newCards; // New Cards to add
+        public string newCardsPack; // New Cards to add
+
+        public bool delete;
     }
 
     // Four maximum Directional Selections
@@ -47,15 +49,28 @@ public class Card : MonoBehaviour
     [SerializeField] public DirSelection[] dirSelecs = new DirSelection[4];
 
     [SerializeField] private bool _doomCard;
+    public bool IsDoomCard => _doomCard;
 
-    public bool OneTime;
+    void Start()
+    {
+        // TODO: Get and set follow up card
+    }
 
     void Update()
     {
-        // *Always lock dirSelecs at 4 max
+        // TODO: Always lock dirSelecs at 4 max
     }
 
-
-
+    public void init(string cardName, string cardDesc, string cardDialogue, DirSelection[] dirSelecs, bool isDoom)
+    {
+        this.cardName = cardName;
+        this.cardDesc = cardDesc;
+        this.cardDialogue = cardDialogue;
+        this.dirSelecs[0] = dirSelecs[0];
+        this.dirSelecs[1] = dirSelecs[1];
+        this.dirSelecs[2] = dirSelecs[2];
+        this.dirSelecs[3] = dirSelecs[3];
+        this._doomCard = isDoom;
+    }
 
 }

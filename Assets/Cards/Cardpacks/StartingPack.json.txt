@@ -1,0 +1,20 @@
+{****dir text
+  cardName: "Tutorial1",
+  cardDesc: "",
+  cardDialogue: "Click an arrow key to see a potential choice. Click again to commit to it!",
+  dirSelecs: [
+	   {loveEffect: 0, approEffect: 0, presEffect: 0, infEffect: 0, armyEffect: 0, churEffect: 0, goldEffect: 0, WeekProgress: 0, YearProgress: 0,
+	    followUpCard: "Tutorial2", "newCardsPack": "", "delete": true},
+
+	   {loveEffect: 0, approEffect: 0, presEffect: 0, infEffect: 0, armyEffect: 0, churEffect: 0, goldEffect: 0, WeekProgress: 0, YearProgress: 0,
+	    followUpCard: "Tutorial2", "newCardsPack": "", "delete": true},
+
+	   {loveEffect: 0, approEffect: 0, presEffect: 0, infEffect: 0, armyEffect: 0, churEffect: 0, goldEffect: 0, WeekProgress: 0, YearProgress: 0,
+	    followUpCard: "Tutorial2", "newCardsPack": "", "delete": true},
+
+	   {loveEffect: 0, approEffect: 0, presEffect: 0, infEffect: 0, armyEffect: 0, churEffect: 0, goldEffect: 0, WeekProgress: 0, YearProgress: 0,
+	    followUpCard: "Tutorial2", "newCardsPack": "", "delete": true}
+	    
+	],
+  doomCard: false
+}
