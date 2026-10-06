@@ -15,6 +15,8 @@ public class CardHolder : MonoBehaviour
     // Attribute Manager
     private AttributeManager _am;
 
+    // Text
+
     [SerializeField] private TextMeshProUGUI _dialogueText;
 
     [SerializeField] private TextMeshProUGUI _descText;
@@ -29,6 +31,9 @@ public class CardHolder : MonoBehaviour
     [SerializeField] private Vector3 _downPos;
 
     [SerializeField] private Vector3 _leftPos;
+
+    // Card Prefab
+    [SerializeField] private Card _cardPrefab;
 
     // Held Card
     private Card _heldCard;
@@ -46,14 +51,21 @@ public class CardHolder : MonoBehaviour
         _am = FindFirstObjectByType<AttributeManager>();
         _rcp = FindFirstObjectByType<RandomCardsPool>();
 
-        if (_heldCard == null)
-        {
-            _heldCard = FindFirstObjectByType<Card>();
-            _heldCard.transform.SetParent(transform);
-            _heldCard.transform.localPosition = _centralPos;    
-            _dialogueText.text = _heldCard.cardDialogue;
-            _descText.text = _heldCard.cardDesc;
-        }
+        // Load in first card pack
+        _rcp.AddCardPack("StartingPack");
+
+        // Load in the first Card (this is always "Tutorial1")
+        _heldCard = Instantiate(_cardPrefab);
+        Card _firstCard = _rcp.GetCard("Tutorial1");
+        _heldCard.init(_firstCard.CardName, _firstCard.cardDesc, _firstCard.cardDialogue, _firstCard.dirSelecs, _firstCard.IsDoomCard, _firstCard.IsRandCard);
+        _heldCard.name = _firstCard.name;
+        _rcp.RemoveCard(_firstCard);
+
+        // Set up Card position
+        _heldCard.transform.SetParent(transform);
+        _heldCard.transform.localPosition = _centralPos;    
+        _dialogueText.text = _heldCard.cardDialogue;
+        _descText.text = _heldCard.cardDesc;
     }
 
     public void OnKey(InputAction.CallbackContext context)
@@ -170,21 +182,17 @@ public class CardHolder : MonoBehaviour
         _descText.text = _heldCard.cardDesc;
 
         // Add New Cards if any exist
-        if (_heldCard.dirSelecs[dir].newCardsPack != "")
+        if (!string.IsNullOrEmpty(_heldCard.dirSelecs[dir].newCardsPack))
         {
             _rcp.AddCardPack(_heldCard.dirSelecs[dir].newCardsPack);
-            Debug.Log("New Cards Added");
+            Debug.Log("New Cards Added from Pack" + _heldCard.dirSelecs[dir].newCardsPack);
         }
-        
-        // TODO: If card's dir was set to delet,e remove the card from the pool
 
         // Get and save the Card's follow up, if there is one. Otherwise, pull a Card from the Random Pool
         Card _nextCard;
-        if (_heldCard.dirSelecs[dir].followUpCard == "")
+        if (!string.IsNullOrEmpty(_heldCard.dirSelecs[dir].followUpCard))
         {
-            // TODO: Find and get follow up card from pool
-            //_nextCard = _heldCard.dirSelecs[dir].FollowUpCard;
-            _nextCard = _rcp.GetRandomCard();
+            _nextCard = _rcp.GetCard(_heldCard.dirSelecs[dir].followUpCard);
         }
         else
         {
@@ -193,10 +201,15 @@ public class CardHolder : MonoBehaviour
         
         // While the Held Card is off screen
         Debug.Log("Change Card: " + _heldCard.CardName + " to " + _nextCard.CardName);
-        
-        Destroy(_heldCard.gameObject);
 
-        _heldCard = Instantiate(_nextCard);
+        // If card's dir was set to delete, remove the card from the pool
+        if (_heldCard.dirSelecs[dir].delete == true && _heldCard.CardName != "Tutorial1") {_rcp.RemoveCard(_heldCard);}
+
+        // Load in next card
+        _heldCard.init(_nextCard.CardName, _nextCard.cardDesc, _nextCard.cardDialogue, _nextCard.dirSelecs, _nextCard.IsDoomCard, _nextCard.IsRandCard);
+        _heldCard.name = _nextCard.name;
+
+        // Move new card to the center
         _heldCard.transform.SetParent(transform);
         _heldCard.transform.localPosition = _centralPos;
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1580038125286527895}
   - component: {fileID: 7884371975178702241}
   m_Layer: 0
-  m_Name: TestCard2
+  m_Name: CardPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6136120933963196288}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.01, y: -0.7, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.1703025, g: 0.7584905, b: 0.7090588, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,7 +104,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda6a288dd936004fa4759e1818c279d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Card
+  cardName: 
+  cardDesc: 
+  cardDialogue: 
   dirSelecs:
+  - loveEffect: 0
+    approEffect: 0
+    presEffect: 0
+    infEffect: 0
+    armyEffect: 0
+    churEffect: 0
+    goldEffect: 0
+    WeekProgress: 0
+    YearProgress: 0
+    followUpCard: 
+    newCardsPack: 
+    delete: 0
+  - loveEffect: 0
+    approEffect: 0
+    presEffect: 0
+    infEffect: 0
+    armyEffect: 0
+    churEffect: 0
+    goldEffect: 0
+    WeekProgress: 0
+    YearProgress: 0
+    followUpCard: 
+    newCardsPack: 
+    delete: 0
   - loveEffect: 10
     approEffect: 0
     presEffect: 0
@@ -114,7 +141,9 @@ MonoBehaviour:
     goldEffect: 0
     WeekProgress: 0
     YearProgress: 0
-    FollowUpCard: {fileID: 0}
+    followUpCard: 
+    newCardsPack: 
+    delete: 0
   - loveEffect: 10
     approEffect: 0
     presEffect: 0
@@ -124,26 +153,8 @@ MonoBehaviour:
     goldEffect: 0
     WeekProgress: 0
     YearProgress: 0
-    FollowUpCard: {fileID: 0}
-  - loveEffect: 10
-    approEffect: 0
-    presEffect: 0
-    infEffect: 0
-    armyEffect: 0
-    churEffect: 0
-    goldEffect: 0
-    WeekProgress: 0
-    YearProgress: 0
-    FollowUpCard: {fileID: 0}
-  - loveEffect: 10
-    approEffect: 0
-    presEffect: 0
-    infEffect: 0
-    armyEffect: 0
-    churEffect: 0
-    goldEffect: 0
-    WeekProgress: 0
-    YearProgress: 0
-    FollowUpCard: {fileID: 0}
+    followUpCard: 
+    newCardsPack: 
+    delete: 0
   _doomCard: 0
-  OneTime: 0
+  _randCard: 0

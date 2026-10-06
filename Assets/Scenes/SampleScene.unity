@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7433963, g: 0.537209, b: 0.71892256, a: 1}
+  m_Color: {r: 0.43557847, g: 0.48474208, b: 0.4943396, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -729,10 +729,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 858275105}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 73}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -26.8}
+  m_SizeDelta: {x: 450, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &315791807
 MonoBehaviour:
@@ -754,9 +754,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'DialogueText
-
-'
+  m_text: Dialogue
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -783,15 +781,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -802,7 +800,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 2
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
@@ -1482,7 +1480,7 @@ Transform:
   m_GameObject: {fileID: 704843725}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.7, z: 0}
+  m_LocalPosition: {x: 0, y: -0.99, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1694,6 +1692,7 @@ MonoBehaviour:
   _rightPos: {x: 0.5, y: 0, z: 0}
   _downPos: {x: 0, y: -0.5, z: 0}
   _leftPos: {x: -0.5, y: 0, z: 0}
+  _cardPrefab: {fileID: 7884371975178702241, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
 --- !u!1 &763290265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2241,7 +2240,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: YearText
+  m_text: 0 Years Passed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2431,7 +2430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 15}
+  m_AnchoredPosition: {x: 0, y: 12.299999}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1222822742
@@ -2593,13 +2592,13 @@ MonoBehaviour:
   _goldText: {fileID: 1074069105}
   _weekText: {fileID: 1949210808}
   _yearText: {fileID: 1180797650}
-  _loveStat: 0
-  _approStat: 0
-  _presStat: 0
-  _infStat: 0
-  _armyStat: 0
-  _churStat: 0
-  _goldStat: 0
+  _loveStat: 1
+  _approStat: 1
+  _presStat: 1
+  _infStat: 1
+  _armyStat: 1
+  _churStat: 1
+  _goldStat: 1
   _weekStat: 0
   _yearStat: 0
 --- !u!1 &1480879798
@@ -2637,8 +2636,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 40}
-  m_SizeDelta: {x: 500, y: 80}
+  m_AnchoredPosition: {x: 0, y: 30}
+  m_SizeDelta: {x: 500, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1480879800
 MonoBehaviour:
@@ -3076,8 +3075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51f58a753675844f9b503e5f6f4460e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomCardsPool
-  _randomCards:
-  - {fileID: 7884371975178702241, guid: 8cac34af5bf1232478267c49c83a9726, type: 3}
+  _cardPool: []
 --- !u!1 &1795828041
 GameObject:
   m_ObjectHideFlags: 0
@@ -3204,7 +3202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9169811, g: 0.89189947, b: 0.14360262, a: 1}
+  m_Color: {r: 0.96981126, g: 0.9404875, b: 0.14455667, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3492,7 +3490,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WeekText
+  m_text: 0 Weeks Passed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3709,75 +3707,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971379749}
   m_CullTransparentMesh: 1
---- !u!1001 &6095496405431811135
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6136120933963196288, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: m_Name
-      value: TestCard
-      objectReference: {fileID: 0}
-    - target: {fileID: 7884371975178702241, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: cardDesc
-      value: Sir Test the Card
-      objectReference: {fileID: 0}
-    - target: {fileID: 7884371975178702241, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: cardName
-      value: TestCard
-      objectReference: {fileID: 0}
-    - target: {fileID: 7884371975178702241, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: cardDialogue
-      value: '"Hey, I''m a Card!"'
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197751408016457443, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197751408016457443, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197751408016457443, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197751408016457443, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197751408016457443, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197751408016457443, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197751408016457443, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197751408016457443, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197751408016457443, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9197751408016457443, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 63866bc6d54375a42a60090cf93b2bd7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3788,5 +3717,4 @@ SceneRoots:
   - {fileID: 1448486852}
   - {fileID: 511534682}
   - {fileID: 704843726}
-  - {fileID: 6095496405431811135}
   - {fileID: 631221109}

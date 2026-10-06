@@ -6,9 +6,9 @@ using UnityEngine;
 public class RandomCardsPool : MonoBehaviour
 {
 
-     private static RandomCardsPool instance;
+    private static RandomCardsPool instance;
 
-    [SerializeField] private List<Card>_cardPool = new List<Card>();
+    [SerializeField] private List<Card> _cardPool = new List<Card>();
 
     void Awake()
     {
@@ -22,52 +22,105 @@ public class RandomCardsPool : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public Card GetCard(string cardName)
+    {
+        foreach(Card card in _cardPool)
+        {
+            if (card.CardName == cardName)
+            {
+                return card;
+            }
+        }
+        Debug.LogError($"No Card of the name {cardName} found!");
+        return null;
+    }
+
     public Card GetRandomCard()
     {
         if (_cardPool.Count < 1) {return null;}
 
-        int randomIndex = Random.Range(0, _cardPool.Count - 1);
-        Card nextCard = _cardPool[randomIndex];
+        Card nextCard;
+
+        // Check to make sure the Card is tagged as Random
+        while(true)
+        {
+            int randomIndex = Random.Range(0, _cardPool.Count - 1);
+            nextCard = _cardPool[randomIndex];  
+            if (nextCard.IsRandCard == true) {break;}
+        }
 
         return nextCard;
     }
 
-    public void AddCard(Card newCard)
+    public void AddCard(Card card)
     {
-        _cardPool.Add(newCard);
+        _cardPool.Add(card);
     }
 
-    public void AddCardPack(string newCardPack)
+    public void RemoveCard(Card card)
     {
-        // TODO: Read json files 
-        string folderPath = Path.Combine(Application.persistentDataPath, "CardPacks");
-        string filePath = Path.Combine(folderPath, newCardPack + ".json");
-        string cardPackData;
+       _cardPool.Remove(card);
+    }
+
+    public void AddCardPack(string filename)
+    {
+        string folderPath = Path.Combine(Application.streamingAssetsPath, "CardPacks");
+        string filePath = Path.Combine(folderPath, filename + ".json");
+        string cardPackString;
 
         if (File.Exists(filePath))
         {
-            cardPackData = File.ReadAllText(filePath);
-        }
+            cardPackString = File.ReadAllText(filePath);
 
-        while (true)
+            // Read the entire packet file into the wrapper
+            CardPackContainer packData = JsonUtility.FromJson<CardPackContainer>(cardPackString);
+
+            if (packData != null && packData.cards != null)
+            {
+                // Loop through every object in the pack
+                int i = 0;
+                foreach (CardDataContainer rawData in packData.cards)
+                {
+                    // TODO: make rcp store card data instead
+                    Card newCard = new GameObject("card_" + filename + "_" + i).AddComponent<Card>();
+
+                    // Construct card
+                    newCard.init(
+                        rawData.cardName, 
+                        rawData.cardDesc, 
+                        rawData.cardDialogue, 
+                        rawData.dirSelecs, 
+                        rawData._doomCard,
+                        rawData._randCard
+                    );
+
+                    // Add card to the pool
+                    _cardPool.Add(newCard);
+                    i++;
+                }
+                
+            }
+        }
+        else
         {
-            // Read and Get Card Name
-
-            // Read and Get Card Desc
-
-            // Read and Get Card Dialogue
-
-            // Read and Get DirSelecs
-              // Attribute Effects
-              // Follow Up Card String
-              // New Cards File Name
-              // Delete?
-
-            // Doom Card?
+            Debug.LogError($"Card Pack JSON file for {filename} not found at: {filePath}");
         }
 
+    }
 
-        // _cardPool.AddRange(newCards);
+    [System.Serializable] public class CardPackContainer
+    {
+        public CardDataContainer[] cards;
+    }
+
+    [System.Serializable] public class CardDataContainer
+    {
+        public string cardName;
+        public string cardDesc;
+        public string cardDialogue;
+        public Card.DirSelection[] dirSelecs;
+        public bool _doomCard;
+        public bool _randCard;
     }
 
 }

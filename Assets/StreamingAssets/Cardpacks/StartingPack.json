@@ -1,0 +1,66 @@
+{
+  "cards": [
+    {
+      "cardName": "Tutorial1",
+      "cardDesc": "Tutorial Guy",
+      "cardDialogue": "Click an arrow key to see a choice. Click again to commit to it!",
+      "dirSelecs": [
+        {
+          "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
+          "followUpCard": "Tutorial2", "newCardsPack": "",
+          "delete": true
+        },
+        {
+          "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
+          "followUpCard": "Tutorial2", "newCardsPack": "",
+          "delete": true
+        },
+        {
+          "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
+          "followUpCard": "Tutorial2", "newCardsPack": "",
+          "delete": true
+        },
+        {
+          "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
+          "followUpCard": "Tutorial2", "newCardsPack": "",
+          "delete": true
+        }
+      ],
+      "_doomCard": false,
+      "_randCard": false
+    },
+    {
+      "cardName": "Tutorial2",
+      "cardDesc": "Tutorial Guy",
+      "cardDialogue": "Keep in mind how specific choices may affect your stats!",
+      "dirSelecs": [
+        {
+          "loveEffect": 9, "approEffect": 9, "presEffect": 9, "infEffect": 9, "armyEffect": 9, "churEffect": 9, "goldEffect": 9, "WeekProgress": 9, "YearProgress": 9,
+          "followUpCard": "Morning", "newCardsPack": "",
+          "delete": true
+        }
+      ],
+      "_doomCard": false,
+      "_randCard": false
+    },
+    {
+      "cardName": "Morning",
+      "cardDesc": "Seneschal Brunz",
+      "cardDialogue": "Good morning, my liege! Court awaits you!",
+      "dirSelecs": [
+        {
+          "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
+          "followUpCard": "Morning", "newCardsPack": "",
+          "delete": true
+        },
+        {
+          "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
+          "followUpCard": "Morning", "newCardsPack": "",
+          "delete": true
+        }
+      ],
+      "_doomCard": false,
+      "_randCard": false
+    }
+  ]
+}

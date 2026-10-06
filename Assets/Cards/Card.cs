@@ -10,8 +10,6 @@ using UnityEngine.InputSystem;
 public class Card : MonoBehaviour
 {
 
-    // TODO: Add Card img var
-
     // Internal name of the Card
     [SerializeField] private string cardName;
     public string CardName => cardName;
@@ -51,26 +49,21 @@ public class Card : MonoBehaviour
     [SerializeField] private bool _doomCard;
     public bool IsDoomCard => _doomCard;
 
-    void Start()
-    {
-        // TODO: Get and set follow up card
-    }
+    [SerializeField] private bool _randCard;
+    public bool IsRandCard => _randCard;
 
-    void Update()
-    {
-        // TODO: Always lock dirSelecs at 4 max
-    }
-
-    public void init(string cardName, string cardDesc, string cardDialogue, DirSelection[] dirSelecs, bool isDoom)
+    public void init(string cardName, string cardDesc, string cardDialogue, DirSelection[] dirSelecs, bool isDoom, bool isRand)
     {
         this.cardName = cardName;
         this.cardDesc = cardDesc;
         this.cardDialogue = cardDialogue;
-        this.dirSelecs[0] = dirSelecs[0];
-        this.dirSelecs[1] = dirSelecs[1];
-        this.dirSelecs[2] = dirSelecs[2];
-        this.dirSelecs[3] = dirSelecs[3];
+        for (int i = 0; i < dirSelecs.Length; i++)
+        {
+            this.dirSelecs[i] = dirSelecs[i];
+        }
         this._doomCard = isDoom;
+        this._randCard = isRand;
     }
+
 
 }

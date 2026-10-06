@@ -39,8 +39,17 @@ public class AttributeManager : MonoBehaviour
         }
 
         instance = this;
-
         DontDestroyOnLoad(gameObject);
+
+        _loveStat = 1;
+        _approStat = 1;
+        _presStat = 1;
+        _infStat = 1;
+        _armyStat = 1;
+        _churStat = 1;
+        _goldStat = 1;
+        _weekStat = 1;
+        _yearStat = 1;
     }
 
     public void AlterAttributes(Card card, int dir)
@@ -74,11 +83,10 @@ public class AttributeManager : MonoBehaviour
         _goldText.text = (int.Parse(_goldText.text) + card.dirSelecs[dir].goldEffect).ToString();
 
         _weekStat += card.dirSelecs[dir].WeekProgress;
-        _weekText.text = $"Week: {_weekStat}";
+        _weekText.text = $"{_weekStat} Weeks Passed";
 
         _yearStat += card.dirSelecs[dir].YearProgress;
-        _yearText.text = $"Year: {_yearStat}";
+        _yearText.text = $"{_yearStat} Years Passed";
         
-
     }
 }
