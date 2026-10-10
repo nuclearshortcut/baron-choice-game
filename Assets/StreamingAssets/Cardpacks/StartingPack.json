@@ -7,27 +7,30 @@
       "dirSelecs": [
         {
           "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
-          "followUpCard": "Tutorial2", "newCardsPack": "",
-          "delete": true
+          "pieceToGet": "", "followUpCard": "Tutorial2", "newCardsPack": "",
+          "delete": true,
+          "dirText": ""
         },
         {
           "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
-          "followUpCard": "Tutorial2", "newCardsPack": "",
-          "delete": true
+          "pieceToGet": "", "followUpCard": "Tutorial2", "newCardsPack": "",
+          "delete": true,
+          "dirText": ""
         },
         {
           "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
-          "followUpCard": "Tutorial2", "newCardsPack": "",
-          "delete": true
+          "pieceToGet": "", "followUpCard": "Tutorial2", "newCardsPack": "",
+          "delete": true,
+          "dirText": ""
         },
         {
           "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
-          "followUpCard": "Tutorial2", "newCardsPack": "",
-          "delete": true
+          "pieceToGet": "", "followUpCard": "Tutorial2", "newCardsPack": "",
+          "delete": true,
+          "dirText": ""
         }
       ],
-      "_doomCard": false,
-      "_randCard": false
+      "_doomCard": false, "_randCard": false
     },
     {
       "cardName": "Tutorial2",
@@ -36,12 +39,12 @@
       "dirSelecs": [
         {
           "loveEffect": 9, "approEffect": 9, "presEffect": 9, "infEffect": 9, "armyEffect": 9, "churEffect": 9, "goldEffect": 9, "WeekProgress": 9, "YearProgress": 9,
-          "followUpCard": "Morning", "newCardsPack": "",
-          "delete": true
+          "pieceToGet": "", "followUpCard": "Morning", "newCardsPack": "",
+          "delete": true,
+          "dirText": ""
         }
       ],
-      "_doomCard": false,
-      "_randCard": false
+      "_doomCard": false, "_randCard": false
     },
     {
       "cardName": "Morning",
@@ -50,17 +53,55 @@
       "dirSelecs": [
         {
           "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
-          "followUpCard": "Morning", "newCardsPack": "",
+          "pieceToGet": "", "followUpCard": "Morning", "newCardsPack": "",
           "delete": true
         },
         {
           "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
-          "followUpCard": "Morning", "newCardsPack": "",
-          "delete": true
+          "pieceToGet": "", "followUpCard": "Morning", "newCardsPack": "",
+          "delete": true,
+          "dirText": ""
         }
       ],
-      "_doomCard": false,
-      "_randCard": false
+      "_doomCard": false, "_randCard": false
+    },
+    {
+      "cardName": "DEV_ItemCard",
+      "cardDesc": "Man",
+      "cardDialogue": "Try the test item!",
+      "dirSelecs": [
+        {
+          "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
+          "pieceToGet": "", "followUpCard": "DEV_ItemCard2", "newCardsPack": "",
+          "delete": true
+        },
+        {
+          "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
+          "pieceToGet": "", "followUpCard": "DEV_ItemCard2", "newCardsPack": "",
+          "delete": true,
+          "dirText": ""
+        }
+      ],
+      "_doomCard": false, "_randCard": false
+    },
+    {
+      "cardName": "DEV_ItemCard2",
+      "cardDesc": "Man",
+      "cardDialogue": "That's a nice item you've got there!",
+      "dirSelecs": [
+        {
+          "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
+          "pieceToGet": "", "followUpCard": "", "newCardsPack": "",
+          "delete": true
+        },
+        {
+          "loveEffect": 0, "approEffect": 0, "presEffect": 0, "infEffect": 0, "armyEffect": 0, "churEffect": 0, "goldEffect": 0, "WeekProgress": 0, "YearProgress": 0,
+          "pieceToGet": "", "followUpCard": "", "newCardsPack": "",
+          "delete": true,
+          "dirText": ""
+        }
+      ],
+      "_doomCard": false, "_randCard": false
     }
   ]
 }

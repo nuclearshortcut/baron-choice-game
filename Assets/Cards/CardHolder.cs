@@ -16,7 +16,6 @@ public class CardHolder : MonoBehaviour
     private AttributeManager _am;
 
     // Text
-
     [SerializeField] private TextMeshProUGUI _dialogueText;
 
     [SerializeField] private TextMeshProUGUI _descText;
@@ -37,6 +36,7 @@ public class CardHolder : MonoBehaviour
 
     // Held Card
     private Card _heldCard;
+    public Card HeldCard() {return _heldCard;}
 
     private string activeSelection;
 
@@ -199,23 +199,31 @@ public class CardHolder : MonoBehaviour
             _nextCard = _rcp.GetRandomCard();
         }
         
-        // While the Held Card is off screen
         Debug.Log("Change Card: " + _heldCard.CardName + " to " + _nextCard.CardName);
-
+        
         // If card's dir was set to delete, remove the card from the pool
         if (_heldCard.dirSelecs[dir].delete == true && _heldCard.CardName != "Tutorial1") {_rcp.RemoveCard(_heldCard);}
 
+        // load Next Card
+        LoadCard(_nextCard);
+   
+    }
+
+    public void LoadCard(Card nextCard)
+    {
+
         // Load in next card
-        _heldCard.init(_nextCard.CardName, _nextCard.cardDesc, _nextCard.cardDialogue, _nextCard.dirSelecs, _nextCard.IsDoomCard, _nextCard.IsRandCard);
-        _heldCard.name = _nextCard.name;
+        _heldCard.init(nextCard.CardName, nextCard.cardDesc, nextCard.cardDialogue, nextCard.dirSelecs, nextCard.IsDoomCard, nextCard.IsRandCard);
+        _heldCard.name = nextCard.name;
 
         // Move new card to the center
         _heldCard.transform.SetParent(transform);
         _heldCard.transform.localPosition = _centralPos;
 
         lastSelection = null;
-        activeSelection = null;
+        activeSelection = null;     // While the Held Card is off screen
     }
+    
 
     private void Cancel()
     {

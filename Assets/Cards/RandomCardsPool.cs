@@ -6,6 +6,12 @@ using UnityEngine;
 public class RandomCardsPool : MonoBehaviour
 {
 
+    // TODO: Have dirs get pieces and load them to the inventory content
+    // TODO: Show dir text beside each lean
+    // TODO: Fix bug where Cards are not removed from the pool when picking the appropriate direction
+    // TODO: Fix cards spawning in the scene before they should
+    // TODO: Set up demo
+
     private static RandomCardsPool instance;
 
     [SerializeField] private List<Card> _cardPool = new List<Card>();
@@ -81,7 +87,6 @@ public class RandomCardsPool : MonoBehaviour
                 int i = 0;
                 foreach (CardDataContainer rawData in packData.cards)
                 {
-                    // TODO: make rcp store card data instead
                     Card newCard = new GameObject("card_" + filename + "_" + i).AddComponent<Card>();
 
                     // Construct card

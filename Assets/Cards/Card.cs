@@ -35,11 +35,14 @@ public class Card : MonoBehaviour
         public int WeekProgress;
         public int YearProgress;
 
+        public string pieceToGet; // Piece attached to the choice
         public string followUpCard; // The card that comes immediately after the current one
-
         public string newCardsPack; // New Cards to add
 
-        public bool delete;
+        public bool delete; // Delete Card after choice is selected?
+
+        public string dirText;
+
     }
 
     // Four maximum Directional Selections
